@@ -2,37 +2,11 @@
 //  SKLabelNode+ShadowLabelNode.swift
 //
 // A Swift port of Erica Sadun's ShadowLabelNode class.  Released under the Creative Commons 0 (CC0) license.
+// Port done by Phillip Brisco
 //
-/*
-    This class uses NSUserDefaults to find the color to use as the shadow node.  This would be
-    set up in the calling routine something like:
-
-        let theDefault : NSUserDefaults? = NSUserDefaults.standardUserDefaults();
-
-        if (theDefault != nil) {
-         
-    followed by the creation of the node with shadow:
-
-        var lblStart = ShadowLabelNode(fontNamed: "ChalkboardSE-Bold")
-        lblStart.fontSize = 60;
-        lblStart.fontColor = UIColor(red: 1.0/255, green: 34.0/255, blue: 144.0/255, alpha: 1.0);
-        lblStart.position = CGPointMake(CGRectGetMidX(selfNode.frame), (selfNode.frame.size.height / 2));
-
-        lblStart.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center;
-        lblStart.text = "Touch Screen to Start";
-        lblStart.name = "START";
-        lblStart.zPosition = 1;
-
-    The obervers in the shadow node will keep track of any text added dynamically (or statically)
-    and position the label's shadow properly in relation to the shadow.
-
-    Be aware, though.  This is an expensive operation and not to be used lightly.
-
-    To remove the label, the observers have to be removed first.  The "removeLabel()" function at
-    the end of this class does this and is called like so:
-
-        lblStart.removeLabel()
-*/
+// Phillip Brisco - Added removeLabel() function so that user can easily delete all observers on the label before deleting
+//                  the label, then delete the label itself.  This way, the user doesn't have to worry about it.
+//
 import SpriteKit
 
 class ShadowLabelNode : SKLabelNode {
