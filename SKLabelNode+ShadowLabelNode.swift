@@ -1,11 +1,8 @@
 //
 //  SKLabelNode+ShadowLabelNode.swift
-//  BabyZoids
 //
-//  Created by Dad on 2/28/15.
-//  Copyright (c) 2015 Natrium. All rights reserved.
+// A Swift port of Erica Sadun's ShadowLabelNode class.  Released under the Creative Commons 0 (CC0) license.
 //
-
 /*
     This class uses NSUserDefaults to find the color to use as the shadow node.  This would be
     set up in the calling routine something like:
